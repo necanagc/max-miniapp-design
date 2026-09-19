@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Жители</title>
+
+    <link rel="stylesheet" href="../../assets/css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="app">
+
+<header>
+
+<div>
+
+<span class="caption">
+
+Председатель
+
+</span>
+
+<h1>
+
+Жители
+
+</h1>
+
+</div>
+
+<button class="avatar" onclick="history.back()">
+
+<i data-lucide="arrow-left"></i>
+
+</button>
+
+</header>
+
+<main>
+
+<section class="search-block">
+
+<input
+type="text"
+class="search-input"
+placeholder="Поиск по имени или квартире">
+
+</section>
+
+<section class="filters">
+
+<button class="chip active">
+
+Все
+
+</button>
+
+<button class="chip">
+
+Активные
+
+</button>
+
+<button class="chip">
+
+Ограничены
+
+</button>
+
+</section>
+
+<section class="residents-list">
+
+<a href="resident.html" class="resident-card">
+
+<div class="resident-avatar">
+
+ИП
+
+</div>
+
+<div class="resident-main">
+
+<h3>
+
+Иван Петров
+
+</h3>
+
+<p>
+
+кв.58 · 18 обращений
+
+</p>
+
+</div>
+
+<div class="resident-status active">
+
+Активен
+
+</div>
+
+</a>
+
+<a href="resident.html" class="resident-card">
+
+<div class="resident-avatar">
+
+МИ
+
+</div>
+
+<div class="resident-main">
+
+<h3>
+
+Мария Иванова
+
+</h3>
+
+<p>
+
+кв.42 · 6 обращений
+
+</p>
+
+</div>
+
+<div class="resident-status active">
+
+Активен
+
+</div>
+
+</a>
+
+<a href="resident.html" class="resident-card restricted">
+
+<div class="resident-avatar">
+
+АС
+
+</div>
+
+<div class="resident-main">
+
+<h3>
+
+Алексей Смирнов
+
+</h3>
+
+<p>
+
+кв.12 · 9 обращений
+
+</p>
+
+</div>
+
+<div class="resident-status restricted">
+
+Ограничен
+
+</div>
+
+</a>
+
+</section>
+
+</main>
+
+</div>
+
+<script src="https://unpkg.com/lucide@latest"></script>
+
+<script>
+
+lucide.createIcons();
+
+</script>
+
+</body>
+
+</html>

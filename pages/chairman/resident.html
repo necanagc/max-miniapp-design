@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Житель</title>
+
+    <link rel="stylesheet" href="../../assets/css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="app">
+
+<header>
+
+<div>
+
+<span class="caption">
+
+Житель
+
+</span>
+
+<h1>
+
+Иван Петров
+
+</h1>
+
+</div>
+
+<button class="avatar" onclick="history.back()">
+
+<i data-lucide="arrow-left"></i>
+
+</button>
+
+</header>
+
+<main>
+
+<section class="profile-card">
+
+<div class="profile-avatar">
+
+ИП
+
+</div>
+
+<h2>
+
+Иван Петров
+
+</h2>
+
+<p>
+
+квартира 58
+
+</p>
+
+<div class="trust-badge">
+
+Высокое доверие
+
+</div>
+
+</section>
+
+<section class="profile-section">
+
+<h2>
+
+Информация
+
+</h2>
+
+<div class="info-card">
+
+<div class="info-row">
+
+<span>Телефон</span>
+
+<strong>+7 (900) 123-45-67</strong>
+
+</div>
+
+<div class="info-row">
+
+<span>Email</span>
+
+<strong>ivan@example.ru</strong>
+
+</div>
+
+<div class="info-row">
+
+<span>Почтовый индекс</span>
+
+<strong>101245</strong>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="profile-section">
+
+<h2>
+
+Статистика
+
+</h2>
+
+<div class="resident-stat-grid">
+
+<div class="resident-stat">
+
+<strong>18</strong>
+
+<span>Обращений</span>
+
+</div>
+
+<div class="resident-stat">
+
+<strong>53</strong>
+
+<span>Подтверждений</span>
+
+</div>
+
+<div class="resident-stat">
+
+<strong>3</strong>
+
+<span>Отклонено</span>
+
+</div>
+
+<div class="resident-stat">
+
+<strong>96%</strong>
+
+<span>Доверие</span>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="profile-section">
+
+<h2>
+
+Последние обращения
+
+</h2>
+
+<div class="resident-issues">
+
+<a href="issue.html" class="issue-mini">
+
+<div>
+
+<h3>
+
+Не работает фонарь
+
+</h3>
+
+<p>
+
+В работе
+
+</p>
+
+</div>
+
+<i data-lucide="chevron-right"></i>
+
+</a>
+
+<a href="issue.html" class="issue-mini">
+
+<div>
+
+<h3>
+
+Переполнены контейнеры
+
+</h3>
+
+<p>
+
+Закрыто
+
+</p>
+
+</div>
+
+<i data-lucide="chevron-right"></i>
+
+</a>
+
+<a href="issue.html" class="issue-mini">
+
+<div>
+
+<h3>
+
+Не работает лифт
+
+</h3>
+
+<p>
+
+Отклонено
+
+</p>
+
+</div>
+
+<i data-lucide="chevron-right"></i>
+
+</a>
+
+</div>
+
+</section>
+
+<section class="profile-section">
+
+<h2>
+
+Ограничение пользователя
+
+</h2>
+
+<select>
+
+<option>
+
+7 дней
+
+</option>
+
+<option>
+
+14 дней
+
+</option>
+
+<option>
+
+30 дней
+
+</option>
+
+<option>
+
+Навсегда
+
+</option>
+
+</select>
+
+<textarea placeholder="Причина ограничения"></textarea>
+
+<div class="resident-actions">
+
+<button class="action-btn danger">
+
+Ограничить
+
+</button>
+
+<button class="secondary-btn">
+
+Снять ограничение
+
+</button>
+
+</div>
+
+</section>
+
+<section class="profile-section">
+
+<h2>
+
+История ограничений
+
+</h2>
+
+<div class="timeline">
+
+<div class="timeline-item">
+
+<div class="timeline-dot"></div>
+
+<div>
+
+<strong>
+
+Ограничение снято
+
+</strong>
+
+<p>
+
+12 июня 2025
+
+</p>
+
+</div>
+
+</div>
+
+<div class="timeline-item">
+
+<div class="timeline-dot active"></div>
+
+<div>
+
+<strong>
+
+Ограничен на 7 дней
+
+</strong>
+
+<p>
+
+Причина: ложные обращения
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+</div>
+
+<script src="https://unpkg.com/lucide@latest"></script>
+
+<script>
+
+lucide.createIcons();
+
+</script>
+
+</body>
+
+</html>

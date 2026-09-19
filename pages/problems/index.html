@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Проблемы</title>
+
+    <link rel="stylesheet" href="../../assets/css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <script src="../../assets/js/app.js"></script>
+</head>
+
+<body>
+
+<div class="app">
+
+<header>
+
+<div>
+
+<span class="caption">
+Раздел
+</span>
+
+<h1>Проблемы</h1>
+
+</div>
+
+<button class="avatar">
+
+<i data-lucide="search"></i>
+
+</button>
+
+</header>
+
+<main>
+
+<section class="filters">
+
+<button class="chip active">
+Все
+</button>
+
+<button class="chip">
+Открытые
+</button>
+
+<button class="chip">
+В работе
+</button>
+
+<button class="chip">
+Решённые
+</button>
+
+</section>
+
+<section class="issues-list">
+
+<a class="issue-card" href="../issue/index.html">
+
+    <div class="status status-open"></div>
+
+    <div class="issue-content">
+
+    <h3>Не работает освещение возле второго подъезда</h3>
+
+    <p>
+    Сегодня · 5 подтверждений
+    </p>
+
+    </div>
+
+    <i data-lucide="chevron-right"></i>
+
+</a>
+
+<article class="issue-card">
+
+<div class="status status-progress"></div>
+
+<div class="issue-content">
+
+<h3>Большая яма возле парковки</h3>
+
+<p>
+Вчера · В работе
+</p>
+
+</div>
+
+<i data-lucide="chevron-right"></i>
+
+</article>
+
+<article class="issue-card">
+
+<div class="status status-done"></div>
+
+<div class="issue-content">
+
+<h3>Сломана детская площадка</h3>
+
+<p>
+2 недели назад · Решено
+</p>
+
+</div>
+
+<i data-lucide="chevron-right"></i>
+
+</article>
+
+</section>
+
+</main>
+
+<nav>
+
+    <a href="../../index.html">
+
+        <i data-lucide="house"></i>
+
+        <span>Главная</span>
+
+    </a>
+
+    <a class="active" href="../problems/index.html">
+
+        <i data-lucide="triangle-alert"></i>
+
+        span>Проблемы</span>
+
+    </a>
+
+    <a href="../news/index.html">
+
+        <i data-lucide="bell"></i>
+
+        <span>Новости</span>
+
+    </a>
+
+    <a>
+
+        <i data-lucide="user"></i>
+
+        <span>Профиль</span>
+
+    </a>
+
+</nav>
+
+</div>
+
+<script src="https://unpkg.com/lucide@latest"></script>
+
+<script>
+lucide.createIcons();
+</script>
+
+</body>
+
+</html>

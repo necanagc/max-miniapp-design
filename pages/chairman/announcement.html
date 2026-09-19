@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Новое объявление</title>
+
+    <link rel="stylesheet" href="../../assets/css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="app">
+
+<header>
+
+<div>
+
+<span class="caption">
+
+Председатель
+
+</span>
+
+<h1>
+
+Новое объявление
+
+</h1>
+
+</div>
+
+<button class="avatar" onclick="history.back()">
+
+<i data-lucide="arrow-left"></i>
+
+</button>
+
+</header>
+
+<main>
+
+<form class="announcement-form">
+
+<section class="form-block">
+
+<h2>Тип объявления</h2>
+
+<div class="type-grid">
+
+<label class="type-card active">
+
+<input type="radio" name="type" checked>
+
+<i data-lucide="megaphone"></i>
+
+<span>Обычное</span>
+
+</label>
+
+<label class="type-card">
+
+<input type="radio" name="type">
+
+<i data-lucide="triangle-alert"></i>
+
+<span>Важное</span>
+
+</label>
+
+</div>
+
+</section>
+
+<section class="form-block">
+
+<h2>Заголовок</h2>
+
+<input
+type="text"
+class="text-input"
+placeholder="Например: Плановое отключение воды">
+
+</section>
+
+<section class="form-block">
+
+<h2>Текст объявления</h2>
+
+<textarea placeholder="Введите текст объявления..."></textarea>
+
+</section>
+
+<section class="form-block">
+
+<h2>Фотографии</h2>
+
+<div class="photos-grid">
+
+<label class="photo-add">
+
+<i data-lucide="plus"></i>
+
+<span>Добавить</span>
+
+<input type="file" hidden multiple>
+
+</label>
+
+</div>
+
+</section>
+
+<section class="form-block">
+
+<h2>Предпросмотр</h2>
+
+<div class="announcement-preview">
+
+<div class="preview-badge">
+
+Обычное
+
+</div>
+
+<h3>
+
+Плановое отключение воды
+
+</h3>
+
+<p>
+
+Здесь будет отображаться предварительный просмотр объявления.
+
+</p>
+
+</div>
+
+</section>
+
+<div class="announcement-actions">
+
+<button type="button" class="secondary-btn">
+
+Сохранить черновик
+
+</button>
+
+<button class="submit-btn">
+
+Опубликовать
+
+</button>
+
+</div>
+
+</form>
+
+</main>
+
+</div>
+
+<script src="https://unpkg.com/lucide@latest"></script>
+
+<script>
+
+lucide.createIcons();
+
+</script>
+
+</body>
+
+</html>

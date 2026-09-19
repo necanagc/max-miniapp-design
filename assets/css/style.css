@@ -1,0 +1,2207 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #F5F6F8;
+    --surface: #FFFFFF;
+    --text: #101828;
+    --secondary: #667085;
+    --line: #E8EBEF;
+    --accent:#4D8B63;
+}
+
+body {
+    background: var(--bg);
+    font-family: Manrope, sans-serif;
+    color: var(--text);
+
+}
+
+.app {
+    max-width: 430px;
+    margin: auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px;
+}
+
+.caption {
+    color: var(--secondary);
+    font-size: 13px;
+}
+
+h1 {
+    margin-top: 4px;
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.avatar {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: none;
+    background: white;
+    border: 1px solid var(--line);
+    cursor: pointer;
+}
+
+main {
+    flex: 1;
+    padding: 0 24px 90px;
+}
+
+.create {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #111827;
+    color: white;
+    padding: 24px;
+    border-radius: 24px;
+    text-decoration: none;
+    transition: .2s;  
+}
+
+.create span {
+    display: block;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.create small {
+    color: rgba(255,255,255,.65);
+}
+
+.create svg {
+
+    width: 28px;
+
+    height: 28px;
+
+}
+
+.create:hover {
+
+    transform: translateY(-2px);
+
+}
+
+.updates {
+
+    margin-top: 34px;
+
+}
+
+.updates h2 {
+
+    font-size: 18px;
+
+    margin-bottom: 14px;
+
+}
+
+.update {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 14px 0;
+
+    border-bottom: 1px solid var(--line);
+
+}
+
+.update svg {
+
+    width: 18px;
+
+    height: 18px;
+
+    color: var(--secondary);
+
+}
+
+.issues {
+
+    margin-top: 40px;
+
+}
+
+.section-title {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 18px;
+
+}
+
+.section-title a {
+
+    color: var(--secondary);
+
+    text-decoration: none;
+
+}
+
+
+
+
+nav {
+
+    position: fixed;
+
+    bottom: 0;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 100%;
+
+    max-width: 430px;
+
+    background: rgba(255,255,255,.95);
+
+    backdrop-filter: blur(20px);
+
+    border-top: 1px solid var(--line);
+
+    display: flex;
+
+    justify-content: space-around;
+
+    padding: 10px 0;
+
+}
+
+nav a {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 5px;
+
+    text-decoration: none;
+
+    color: #8A9099;
+
+    font-size: 11px;
+
+    cursor: pointer;
+
+}
+
+nav svg {
+
+    width: 22px;
+
+    height: 22px;
+
+}
+
+nav .active {
+
+    color: var(--text);
+
+    font-weight: 700;
+
+}
+
+
+.empty-state{
+
+    margin-top:8px;
+
+    background:white;
+
+    border:1px solid var(--line);
+
+    border-radius:24px;
+
+    padding:42px 28px;
+
+    text-align:center;
+
+}
+
+.empty-icon{
+
+    width:72px;
+
+    height:72px;
+
+    margin:auto;
+
+    margin-bottom:18px;
+
+    border-radius:20px;
+
+    background:#F3F4F6;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.empty-icon svg{
+
+    width:30px;
+
+    height:30px;
+
+    color:#98A2B3;
+
+}
+
+.empty-state h3{
+
+    font-size:19px;
+
+    margin-bottom:10px;
+
+}
+
+.empty-state p{
+
+    color:var(--secondary);
+
+    line-height:1.6;
+
+    font-size:15px;
+
+}
+
+
+
+
+
+/* ---------- Problems ---------- */
+
+.filters {
+
+    display: flex;
+
+    gap: 10px;
+
+    overflow-x: auto;
+
+    padding-bottom: 10px;
+
+    margin-bottom: 28px;
+
+}
+
+.filters::-webkit-scrollbar {
+
+    display: none;
+
+}
+
+.chip {
+
+    padding: 10px 18px;
+
+    border-radius: 999px;
+
+    background: white;
+
+    border: 1px solid var(--line);
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+
+}
+
+.chip.active {
+
+    background: #111827;
+
+    color: white;
+
+    border-color: #111827;
+
+}
+
+.issues-list {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+
+}
+
+.issue-card{
+
+    background:white;
+
+    border:1px solid var(--line);
+
+    border-radius:22px;
+
+    padding:18px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:16px;
+
+    transition:.2s;
+
+    cursor:pointer;
+
+    text-decoration:none;
+
+    color:inherit;
+
+}
+
+.issue-card:hover {
+
+    transform: translateY(-2px);
+
+}
+
+.status {
+
+    width: 12px;
+
+    height: 12px;
+
+    border-radius: 50%;
+
+    flex-shrink: 0;
+
+}
+
+.status-open {
+
+    background: #EF4444;
+
+}
+
+.status-progress {
+
+    background: #F59E0B;
+
+}
+
+.status-done {
+
+    background: #22C55E;
+
+}
+
+.issue-content {
+
+    flex: 1;
+
+}
+
+.issue-content h3 {
+
+    font-size: 17px;
+
+    line-height: 1.35;
+
+    margin-bottom: 6px;
+
+}
+
+.issue-content p {
+
+    color: var(--secondary);
+
+    font-size: 14px;
+
+}
+
+.issue-card svg {
+
+    color: #98A2B3;
+
+}
+
+
+
+
+/* ---------- News ---------- */
+
+.news-list {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 16px;
+
+}
+
+.news-card {
+
+    background: white;
+
+    border: 1px solid var(--line);
+
+    border-radius: 22px;
+
+    padding: 22px;
+
+    transition: .2s;
+
+    cursor: pointer;
+
+}
+
+.news-card:hover {
+
+    transform: translateY(-2px);
+
+}
+
+.news-date {
+
+    color: var(--secondary);
+
+    font-size: 13px;
+
+    margin-bottom: 10px;
+
+    font-weight: 500;
+
+}
+
+.news-card h3 {
+
+    font-size: 19px;
+
+    line-height: 1.4;
+
+    margin-bottom: 12px;
+
+    font-weight: 700;
+
+}
+
+.news-card p {
+
+    color: var(--secondary);
+
+    font-size: 15px;
+
+    line-height: 1.6;
+
+}
+
+.attachment {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-top: 18px;
+
+    padding: 8px 12px;
+
+    background: #F8F9FB;
+
+    border-radius: 12px;
+
+    color: var(--secondary);
+
+    font-size: 14px;
+
+}
+
+.attachment svg {
+
+    width: 16px;
+
+    height: 16px;
+
+}
+
+
+
+
+/* ---------- Profile ---------- */
+
+.profile-card {
+
+    background: white;
+
+    border: 1px solid var(--line);
+
+    border-radius: 24px;
+
+    padding: 32px;
+
+    text-align: center;
+
+    margin-bottom: 32px;
+
+}
+
+.profile-avatar {
+
+    width: 84px;
+
+    height: 84px;
+
+    margin: 0 auto 18px;
+
+    border-radius: 50%;
+
+    background: #111827;
+
+    color: white;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 28px;
+
+    font-weight: 700;
+
+}
+
+.profile-card h2 {
+
+    font-size: 24px;
+
+    margin-bottom: 6px;
+
+}
+
+.profile-card p {
+
+    color: var(--secondary);
+
+}
+
+.profile-section {
+
+    margin-bottom: 32px;
+
+}
+
+.profile-section h2 {
+
+    font-size: 18px;
+
+    margin-bottom: 14px;
+
+}
+
+.info-card {
+
+    background: white;
+
+    border: 1px solid var(--line);
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+}
+
+.info-row {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 18px 20px;
+
+    border-bottom: 1px solid var(--line);
+
+}
+
+.info-row:last-child {
+
+    border-bottom: none;
+
+}
+
+.info-row span {
+
+    color: var(--secondary);
+
+    font-size: 14px;
+
+}
+
+.info-row strong {
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+}
+
+.contact-card {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    text-decoration: none;
+
+    color: inherit;
+
+    background: white;
+
+    border: 1px solid var(--line);
+
+    border-radius: 20px;
+
+    padding: 18px 20px;
+
+    margin-bottom: 14px;
+
+    transition: .2s;
+
+}
+
+.contact-card:hover {
+
+    transform: translateY(-2px);
+
+}
+
+.contact-card h3 {
+
+    font-size: 17px;
+
+    margin-bottom: 4px;
+
+}
+
+.contact-card p {
+
+    color: var(--secondary);
+
+    font-size: 14px;
+
+}
+
+.contact-card svg {
+
+    color: var(--accent);
+
+    width: 20px;
+
+    height: 20px;
+
+}
+
+
+
+/* ---------- Issue ---------- */
+
+.issue-header {
+
+    margin-bottom: 24px;
+
+}
+
+.status-badge {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 8px 14px;
+
+    border-radius: 999px;
+
+    background: #FFF8E6;
+
+    color: #C27A00;
+
+    font-size: 14px;
+
+    margin-bottom: 16px;
+
+}
+
+.status-badge svg {
+
+    width: 16px;
+
+    height: 16px;
+
+}
+
+.issue-header h2 {
+
+    font-size: 24px;
+
+    line-height: 1.35;
+
+    margin-bottom: 10px;
+
+}
+
+.issue-header p {
+
+    color: var(--secondary);
+
+    font-size: 14px;
+
+}
+
+.issue-photo {
+
+    margin-bottom: 28px;
+
+}
+
+.photo-placeholder {
+
+    height: 220px;
+
+    border: 2px dashed var(--line);
+
+    border-radius: 24px;
+
+    background: white;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 12px;
+
+}
+
+.photo-placeholder svg {
+
+    width: 42px;
+
+    height: 42px;
+
+    color: #98A2B3;
+
+}
+
+.photo-placeholder span {
+
+    color: var(--secondary);
+
+}
+
+.issue-block {
+
+    background: white;
+
+    border: 1px solid var(--line);
+
+    border-radius: 20px;
+
+    padding: 20px;
+
+    margin-bottom: 18px;
+
+}
+
+.issue-block h3 {
+
+    margin-bottom: 14px;
+
+    font-size: 18px;
+
+}
+
+.issue-block p {
+
+    color: var(--secondary);
+
+    line-height: 1.7;
+
+}
+
+.confirm-row {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+}
+
+.confirm-btn {
+
+    border: none;
+
+    background: #111827;
+
+    color: white;
+
+    padding: 12px 18px;
+
+    border-radius: 14px;
+
+    display: flex;
+
+    gap: 8px;
+
+    align-items: center;
+
+    cursor: pointer;
+
+    font-family: inherit;
+
+}
+
+.timeline{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+.timeline-item{
+
+    display:flex;
+
+    gap:16px;
+
+    align-items:flex-start;
+
+}
+
+.timeline-dot{
+
+    width:12px;
+
+    height:12px;
+
+    border-radius:50%;
+
+    background:#D0D5DD;
+
+    margin-top:6px;
+
+    flex-shrink:0;
+
+}
+
+.timeline-dot.active{
+
+    background:var(--accent);
+
+}
+
+.timeline-item strong{
+
+    display:block;
+
+    font-size:15px;
+
+    margin-bottom:4px;
+
+}
+
+.timeline-item p{
+
+    font-size:14px;
+
+    color:var(--secondary);
+
+}
+
+
+
+
+/* ---------- Create ---------- */
+
+.create-form{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:24px;
+
+}
+
+.form-block h2{
+
+    font-size:18px;
+
+    margin-bottom:14px;
+
+}
+
+
+select{
+
+    width:100%;
+
+    height:56px;
+
+    border-radius:16px;
+
+    border:1px solid var(--line);
+
+    background:white;
+
+    padding:0 18px;
+
+    font-size:15px;
+
+    font-family:inherit;
+
+    outline:none;
+
+}
+
+textarea{
+
+    width:100%;
+
+    min-height:150px;
+
+    resize:none;
+
+    border-radius:20px;
+
+    border:1px solid var(--line);
+
+    padding:18px;
+
+    font-size:15px;
+
+    font-family:inherit;
+
+    outline:none;
+
+}
+
+textarea::placeholder{
+
+    color:var(--secondary);
+
+}
+
+.submit-btn{
+
+    margin-top:10px;
+
+    height:60px;
+
+    border:none;
+
+    border-radius:18px;
+
+    background:#111827;
+
+    color:white;
+
+    font-size:17px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    font-family:inherit;
+
+    transition:.2s;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-decoration:none;
+
+}
+
+.submit-btn:hover{
+
+    transform:translateY(-2px);
+
+}
+
+
+
+
+/* ---------- Photos ---------- */
+
+.photos-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:14px;
+
+}
+
+
+.photo-add{
+
+    aspect-ratio:1;
+
+    background:#FAFBFC;
+
+    border:2px dashed var(--line);
+
+    border-radius:22px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:10px;
+
+    cursor:pointer;
+
+    transition:.2s;
+
+}
+
+.photo-add:hover{
+    background:white;
+    border-color:var(--accent);
+}
+
+.photo-add svg{
+    width:30px;
+    height:30px;
+    color:var(--secondary);
+}
+
+.photo-add span{
+    color:var(--secondary);
+    font-size:13px;
+}
+
+.photo-item{
+    position:relative;
+    aspect-ratio:1;
+    overflow:hidden;
+    border-radius:22px;
+    background:white;
+    border:1px solid var(--line);
+    box-shadow:0 2px 6px rgba(16,24,40,.05);
+}
+
+.photo-item img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.photo-remove{
+    position:absolute;
+    top:6px;
+    right:6px;
+    width:24px;
+    height:24px;
+    border:none;
+    border-radius:50%;
+    background:rgba(17,24,39,.72);
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    cursor:pointer;
+    font-size:14px;
+
+}
+
+
+
+
+/* ---------- Chairman ---------- */
+
+.stats-grid{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:14px;
+
+margin-bottom:34px;
+
+}
+
+.stat-card{
+
+background:white;
+
+border:1px solid var(--line);
+
+border-radius:22px;
+
+padding:22px;
+
+}
+
+.stat-card strong{
+
+display:block;
+
+font-size:34px;
+
+font-weight:800;
+
+margin-bottom:6px;
+
+}
+
+.stat-card span{
+
+color:var(--secondary);
+
+font-size:14px;
+
+}
+
+.chairman-section{
+
+margin-bottom:34px;
+
+}
+
+.attention-card{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:20px;
+
+background:white;
+
+border:1px solid var(--line);
+
+border-radius:22px;
+
+margin-top:14px;
+
+text-decoration:none;
+
+color:inherit;
+
+transition:.2s;
+
+}
+
+.attention-card:hover{
+
+transform:translateY(-2px);
+
+}
+
+.attention-card h3{
+
+font-size:17px;
+
+margin-bottom:6px;
+
+}
+
+.attention-card p{
+
+color:var(--secondary);
+
+font-size:14px;
+
+}
+
+.attention-card svg{
+
+color:#98A2B3;
+
+}
+
+.actions-grid{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:14px;
+
+}
+
+.action-card{
+
+background:white;
+
+border:1px solid var(--line);
+
+border-radius:22px;
+
+padding:24px;
+
+display:flex;
+
+flex-direction:column;
+
+gap:18px;
+
+text-decoration:none;
+
+color:inherit;
+
+transition:.2s;
+
+}
+
+.action-card:hover{
+
+transform:translateY(-2px);
+
+}
+
+.action-card svg{
+
+width:28px;
+
+height:28px;
+
+color:var(--accent);
+
+}
+
+.action-card span{
+
+font-weight:600;
+
+}
+
+.stat-card.warning{
+
+    background:#FFF8E6;
+
+    border-color:#F5D38A;
+
+}
+
+
+/* ---------- Chairman Issue ---------- */
+
+.resident-info{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+margin-bottom:20px;
+
+}
+
+.resident-info strong{
+
+font-size:17px;
+
+}
+
+.resident-info p{
+
+margin-top:4px;
+
+color:var(--secondary);
+
+font-size:14px;
+
+}
+
+.mini-btn{
+
+padding:10px 18px;
+
+border-radius:14px;
+
+background:#F3F4F6;
+
+text-decoration:none;
+
+color:var(--text);
+
+font-size:14px;
+
+font-weight:600;
+
+}
+
+.resident-stats{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:14px;
+
+text-align:center;
+
+}
+
+.resident-stats strong{
+
+display:block;
+
+font-size:24px;
+
+margin-bottom:4px;
+
+}
+
+.resident-stats span{
+
+font-size:13px;
+
+color:var(--secondary);
+
+}
+
+.actions-column{
+
+display:flex;
+
+flex-direction:column;
+
+gap:14px;
+
+}
+
+.action-btn{
+
+height:54px;
+
+border:none;
+
+border-radius:16px;
+
+font-family:inherit;
+
+font-size:16px;
+
+font-weight:700;
+
+cursor:pointer;
+
+transition:.2s;
+
+}
+
+.action-btn:hover{
+
+transform:translateY(-2px);
+
+}
+
+.action-btn.primary{
+
+background:#111827;
+
+color:white;
+
+}
+
+.action-btn.success{
+
+background:#EAF8EF;
+
+color:#177245;
+
+}
+
+.action-btn.danger{
+
+background:#FDECEC;
+
+color:#C62828;
+
+}
+
+.issue-block textarea{
+
+margin-top:10px;
+
+min-height:120px;
+
+}
+
+
+/* ---------- Chairman Announcement ---------- */
+
+.announcement-form{
+
+display:flex;
+
+flex-direction:column;
+
+gap:28px;
+
+}
+
+.type-grid{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:14px;
+
+}
+
+.type-card{
+
+background:white;
+
+border:1px solid var(--line);
+
+border-radius:22px;
+
+padding:22px;
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+gap:14px;
+
+cursor:pointer;
+
+transition:.2s;
+
+}
+
+.type-card:hover{
+
+transform:translateY(-2px);
+
+}
+
+.type-card.active{
+
+border-color:var(--accent);
+
+background:#F5FBF7;
+
+}
+
+.type-card input{
+
+display:none;
+
+}
+
+.type-card svg{
+
+width:30px;
+
+height:30px;
+
+color:var(--accent);
+
+}
+
+.type-card span{
+
+font-weight:700;
+
+}
+
+.text-input{
+
+width:100%;
+
+height:56px;
+
+border:1px solid var(--line);
+
+border-radius:18px;
+
+padding:0 18px;
+
+font-size:15px;
+
+font-family:inherit;
+
+outline:none;
+
+background:white;
+
+}
+
+.announcement-preview{
+
+background:white;
+
+border:1px solid var(--line);
+
+border-radius:24px;
+
+padding:24px;
+
+}
+
+.preview-badge{
+
+display:inline-block;
+
+padding:8px 14px;
+
+border-radius:999px;
+
+background:#F3F4F6;
+
+font-size:13px;
+
+font-weight:700;
+
+margin-bottom:16px;
+
+}
+
+.announcement-preview h3{
+
+font-size:22px;
+
+margin-bottom:12px;
+
+line-height:1.4;
+
+}
+
+.announcement-preview p{
+
+font-size:15px;
+
+line-height:1.7;
+
+color:var(--secondary);
+
+}
+
+.announcement-actions{
+
+display:flex;
+
+flex-direction:column;
+
+gap:14px;
+
+}
+
+.secondary-btn{
+
+height:56px;
+
+border:1px solid var(--line);
+
+border-radius:18px;
+
+background:white;
+
+font-family:inherit;
+
+font-size:16px;
+
+font-weight:700;
+
+cursor:pointer;
+
+transition:.2s;
+
+}
+
+.secondary-btn:hover{
+
+transform:translateY(-2px);
+
+}
+
+
+
+/* ---------- Chairman Residents ---------- */
+
+.search-block{
+
+margin-bottom:24px;
+
+}
+
+.search-input{
+
+width:100%;
+
+height:56px;
+
+border:1px solid var(--line);
+
+border-radius:18px;
+
+padding:0 18px;
+
+font-size:15px;
+
+font-family:inherit;
+
+background:white;
+
+outline:none;
+
+}
+
+.residents-list{
+
+display:flex;
+
+flex-direction:column;
+
+gap:16px;
+
+}
+
+.resident-card{
+
+display:flex;
+
+align-items:center;
+
+gap:16px;
+
+padding:18px;
+
+background:white;
+
+border:1px solid var(--line);
+
+border-radius:22px;
+
+text-decoration:none;
+
+color:inherit;
+
+transition:.2s;
+
+}
+
+.resident-card:hover{
+
+transform:translateY(-2px);
+
+}
+
+.resident-card.restricted{
+
+border-color:#F2B8B5;
+
+background:#FFF8F8;
+
+}
+
+.resident-avatar{
+
+width:52px;
+
+height:52px;
+
+border-radius:50%;
+
+background:#111827;
+
+color:white;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-weight:700;
+
+flex-shrink:0;
+
+}
+
+.resident-main{
+
+flex:1;
+
+}
+
+.resident-main h3{
+
+font-size:17px;
+
+margin-bottom:6px;
+
+}
+
+.resident-main p{
+
+font-size:14px;
+
+color:var(--secondary);
+
+}
+
+.resident-status{
+
+padding:8px 12px;
+
+border-radius:999px;
+
+font-size:13px;
+
+font-weight:700;
+
+white-space:nowrap;
+
+}
+
+.resident-status.active{
+
+background:#ECFDF3;
+
+color:#027A48;
+
+}
+
+.resident-status.restricted{
+
+background:#FEF3F2;
+
+color:#B42318;
+
+}
+
+
+/* ---------- Chairman Resident ---------- */
+
+.trust-badge{
+
+display:inline-block;
+
+margin-top:18px;
+
+padding:8px 16px;
+
+border-radius:999px;
+
+background:#ECFDF3;
+
+color:#027A48;
+
+font-size:14px;
+
+font-weight:700;
+
+}
+
+.resident-stat-grid{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:14px;
+
+}
+
+.resident-stat{
+
+background:white;
+
+border:1px solid var(--line);
+
+border-radius:20px;
+
+padding:22px;
+
+text-align:center;
+
+}
+
+.resident-stat strong{
+
+display:block;
+
+font-size:30px;
+
+margin-bottom:8px;
+
+font-weight:800;
+
+}
+
+.resident-stat span{
+
+font-size:14px;
+
+color:var(--secondary);
+
+}
+
+.resident-issues{
+
+display:flex;
+
+flex-direction:column;
+
+gap:14px;
+
+}
+
+.issue-mini{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:18px;
+
+background:white;
+
+border:1px solid var(--line);
+
+border-radius:20px;
+
+text-decoration:none;
+
+color:inherit;
+
+transition:.2s;
+
+}
+
+.issue-mini:hover{
+
+transform:translateY(-2px);
+
+}
+
+.issue-mini h3{
+
+font-size:17px;
+
+margin-bottom:6px;
+
+}
+
+.issue-mini p{
+
+font-size:14px;
+
+color:var(--secondary);
+
+}
+
+.issue-mini svg{
+
+color:#98A2B3;
+
+}
+
+.resident-actions{
+
+display:flex;
+
+flex-direction:column;
+
+gap:14px;
+
+margin-top:18px;
+
+}
+
+
+
+
+/* ---------- Chairman Logs ---------- */
+
+.logs-day{
+
+margin-bottom:34px;
+
+}
+
+.logs-day h2{
+
+font-size:18px;
+
+margin-bottom:16px;
+
+}
+
+.log-card{
+
+display:flex;
+
+align-items:center;
+
+gap:16px;
+
+padding:18px;
+
+background:white;
+
+border:1px solid var(--line);
+
+border-radius:22px;
+
+text-decoration:none;
+
+color:inherit;
+
+margin-bottom:14px;
+
+transition:.2s;
+
+}
+
+.log-card:hover{
+
+transform:translateY(-2px);
+
+}
+
+.log-icon{
+
+width:46px;
+
+height:46px;
+
+border-radius:16px;
+
+background:#F5F6F8;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+flex-shrink:0;
+
+}
+
+.log-icon svg{
+
+width:22px;
+
+height:22px;
+
+color:var(--accent);
+
+}
+
+.log-content{
+
+flex:1;
+
+}
+
+.log-content h3{
+
+font-size:16px;
+
+margin-bottom:6px;
+
+}
+
+.log-content p{
+
+font-size:14px;
+
+color:var(--secondary);
+
+}
+
+.log-time{
+
+font-size:13px;
+
+color:var(--secondary);
+
+font-weight:600;
+
+white-space:nowrap;
+
+}
+
+
+/* ---------- Chairman Settings ---------- */
+
+.settings-list{
+
+display:flex;
+
+flex-direction:column;
+
+gap:14px;
+
+}
+
+.settings-card{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:20px;
+
+background:white;
+
+border:1px solid var(--line);
+
+border-radius:22px;
+
+transition:.2s;
+
+cursor:pointer;
+
+}
+
+.settings-card:hover{
+
+transform:translateY(-2px);
+
+}
+
+.settings-card h3{
+
+font-size:17px;
+
+margin-bottom:6px;
+
+}
+
+.settings-card p{
+
+font-size:14px;
+
+color:var(--secondary);
+
+}
+
+.settings-card svg{
+
+color:#98A2B3;
+
+}
+
+.settings-link{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:22px;
+
+background:white;
+
+border:1px solid var(--line);
+
+border-radius:22px;
+
+text-decoration:none;
+
+color:inherit;
+
+transition:.2s;
+
+}
+
+.settings-link:hover{
+
+transform:translateY(-2px);
+
+}
+
+.settings-link h3{
+
+font-size:17px;
+
+margin-bottom:6px;
+
+}
+
+.settings-link p{
+
+font-size:14px;
+
+color:var(--secondary);
+
+}
+
+.settings-link svg{
+
+color:#98A2B3;
+
+}

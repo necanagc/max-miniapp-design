@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Журнал действий</title>
+
+    <link rel="stylesheet" href="../../assets/css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="app">
+
+<header>
+
+<div>
+
+<span class="caption">
+
+Председатель
+
+</span>
+
+<h1>
+
+Журнал
+
+</h1>
+
+</div>
+
+<button class="avatar" onclick="history.back()">
+
+<i data-lucide="arrow-left"></i>
+
+</button>
+
+</header>
+
+<main>
+
+<section class="filters">
+
+<button class="chip active">
+
+Все
+
+</button>
+
+<button class="chip">
+
+Обращения
+
+</button>
+
+<button class="chip">
+
+Жители
+
+</button>
+
+<button class="chip">
+
+Объявления
+
+</button>
+
+<button class="chip">
+
+Настройки
+
+</button>
+
+</section>
+
+<section class="logs-day">
+
+<h2>
+
+Сегодня
+
+</h2>
+
+<a href="issue.html" class="log-card">
+
+<div class="log-icon">
+
+<i data-lucide="triangle-alert"></i>
+
+</div>
+
+<div class="log-content">
+
+<h3>
+
+Создано новое обращение
+
+</h3>
+
+<p>
+
+Иван Петров · кв.58
+
+</p>
+
+</div>
+
+<span class="log-time">
+
+09:42
+
+</span>
+
+</a>
+
+<a href="announcement.html" class="log-card">
+
+<div class="log-icon">
+
+<i data-lucide="megaphone"></i>
+
+</div>
+
+<div class="log-content">
+
+<h3>
+
+Опубликовано объявление
+
+</h3>
+
+<p>
+
+Плановое отключение воды
+
+</p>
+
+</div>
+
+<span class="log-time">
+
+09:18
+
+</span>
+
+</a>
+
+<a href="resident.html" class="log-card">
+
+<div class="log-icon">
+
+<i data-lucide="shield-alert"></i>
+
+</div>
+
+<div class="log-content">
+
+<h3>
+
+Пользователь ограничен
+
+</h3>
+
+<p>
+
+Алексей Смирнов · 14 дней
+
+</p>
+
+</div>
+
+<span class="log-time">
+
+08:54
+
+</span>
+
+</a>
+
+</section>
+
+<section class="logs-day">
+
+<h2>
+
+Вчера
+
+</h2>
+
+<a href="issue.html" class="log-card">
+
+<div class="log-icon">
+
+<i data-lucide="check-circle-2"></i>
+
+</div>
+
+<div class="log-content">
+
+<h3>
+
+Обращение закрыто
+
+</h3>
+
+<p>
+
+Не работает освещение
+
+</p>
+
+</div>
+
+<span class="log-time">
+
+18:31
+
+</span>
+
+</a>
+
+<a href="settings.html" class="log-card">
+
+<div class="log-icon">
+
+<i data-lucide="settings"></i>
+
+</div>
+
+<div class="log-content">
+
+<h3>
+
+Изменены контакты электрика
+
+</h3>
+
+<p>
+
+Настройки дома
+
+</p>
+
+</div>
+
+<span class="log-time">
+
+11:07
+
+</span>
+
+</a>
+
+</section>
+
+</main>
+
+</div>
+
+<script src="https://unpkg.com/lucide@latest"></script>
+
+<script>
+
+lucide.createIcons();
+
+</script>
+
+</body>
+
+</html>
