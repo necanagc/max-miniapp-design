@@ -3,19 +3,18 @@
 
 <head>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Проблемы</title>
+<title>Проблемы</title>
 
-    <link rel="stylesheet" href="../../assets/css/style.css">
+<link rel="stylesheet" href="../../assets/css/style.css">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet">
-    <script src="../../assets/js/app.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
@@ -26,9 +25,7 @@
 
 <div>
 
-<span class="caption">
-Раздел
-</span>
+<span class="caption">Раздел</span>
 
 <h1>Проблемы</h1>
 
@@ -44,6 +41,15 @@
 
 <main>
 
+<div class="search-block">
+
+<input
+class="search-input"
+type="text"
+placeholder="Поиск обращения...">
+
+</div>
+
 <section class="filters">
 
 <button class="chip active">
@@ -51,7 +57,7 @@
 </button>
 
 <button class="chip">
-Открытые
+Новые
 </button>
 
 <button class="chip">
@@ -59,7 +65,11 @@
 </button>
 
 <button class="chip">
-Решённые
+На проверке
+</button>
+
+<button class="chip">
+Решено
 </button>
 
 </section>
@@ -68,57 +78,117 @@
 
 <a class="issue-card" href="../issue/index.html">
 
-    <div class="status status-open"></div>
-
-    <div class="issue-content">
-
-    <h3>Не работает освещение возле второго подъезда</h3>
-
-    <p>
-    Сегодня · 5 подтверждений
-    </p>
-
-    </div>
-
-    <i data-lucide="chevron-right"></i>
-
-</a>
-
-<article class="issue-card">
-
 <div class="status status-progress"></div>
 
 <div class="issue-content">
 
-<h3>Большая яма возле парковки</h3>
+<span class="issue-category">
+
+Освещение
+
+</span>
+
+<h3>
+
+Не работает освещение возле второго подъезда
+
+</h3>
 
 <p>
-Вчера · В работе
+
+ул. Ленина, 25
+
 </p>
+
+<div class="issue-meta-row">
+
+<span>👍 18 подтверждений</span>
+
+<span>Сегодня</span>
+
+</div>
 
 </div>
 
 <i data-lucide="chevron-right"></i>
 
-</article>
+</a>
 
-<article class="issue-card">
+<a class="issue-card" href="../issue/index.html">
+
+<div class="status status-open"></div>
+
+<div class="issue-content">
+
+<span class="issue-category">
+
+Мусор
+
+</span>
+
+<h3>
+
+Переполнены контейнеры
+
+</h3>
+
+<p>
+
+ул. Ленина, 25
+
+</p>
+
+<div class="issue-meta-row">
+
+<span>👍 7 подтверждений</span>
+
+<span>Вчера</span>
+
+</div>
+
+</div>
+
+<i data-lucide="chevron-right"></i>
+
+</a>
+
+<a class="issue-card" href="../issue/index.html">
 
 <div class="status status-done"></div>
 
 <div class="issue-content">
 
-<h3>Сломана детская площадка</h3>
+<span class="issue-category">
+
+Благоустройство
+
+</span>
+
+<h3>
+
+Отремонтирована детская площадка
+
+</h3>
 
 <p>
-2 недели назад · Решено
+
+ул. Ленина, 25
+
 </p>
+
+<div class="issue-meta-row">
+
+<span>👍 24 подтверждения</span>
+
+<span>2 недели назад</span>
+
+</div>
 
 </div>
 
 <i data-lucide="chevron-right"></i>
 
-</article>
+</a>
 
 </section>
 
@@ -126,46 +196,57 @@
 
 <nav>
 
-    <a href="../../index.html">
+<a href="../../index.html">
 
-        <i data-lucide="house"></i>
+<i data-lucide="house"></i>
 
-        <span>Главная</span>
+<span>Главная</span>
 
-    </a>
+</a>
 
-    <a class="active" href="../problems/index.html">
+<a class="active" href="index.html">
 
-        <i data-lucide="triangle-alert"></i>
+<i data-lucide="triangle-alert"></i>
 
-        span>Проблемы</span>
+<span>Проблемы</span>
 
-    </a>
+</a>
 
-    <a href="../news/index.html">
+<a href="../news/index.html">
 
-        <i data-lucide="bell"></i>
+<i data-lucide="bell"></i>
 
-        <span>Новости</span>
+<span>Новости</span>
 
-    </a>
+</a>
 
-    <a>
+<a href="../community/index.html">
 
-        <i data-lucide="user"></i>
+<i data-lucide="users-round"></i>
 
-        <span>Профиль</span>
+<span>Сообщество</span>
 
-    </a>
+</a>
+
+<a href="../profile/index.html">
+
+<i data-lucide="user"></i>
+
+<span>Профиль</span>
+
+</a>
 
 </nav>
 
 </div>
 
+<script src="../../assets/js/app.js"></script>
 <script src="https://unpkg.com/lucide@latest"></script>
 
 <script>
+
 lucide.createIcons();
+
 </script>
 
 </body>

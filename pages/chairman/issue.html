@@ -3,18 +3,17 @@
 
 <head>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Обращение</title>
+<title>Обращение</title>
 
-    <link rel="stylesheet" href="../../assets/css/style.css">
+<link rel="stylesheet" href="../../assets/css/style.css">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 </head>
 
@@ -27,23 +26,17 @@
 <div>
 
 <span class="caption">
-
-Обращение
-
+Обращение №1048
 </span>
 
 <h1>
-
 Освещение
-
 </h1>
 
 </div>
 
 <button class="avatar" onclick="history.back()">
-
 <i data-lucide="arrow-left"></i>
-
 </button>
 
 </header>
@@ -68,19 +61,51 @@
 
 <p>
 
-Создано сегодня в 18:34
+Создано сегодня · 18:34
 
 </p>
 
 </section>
 
+<section class="issue-block">
+
+<div class="resident-stat-grid">
+
+<div class="resident-stat">
+
+<strong>Высокий</strong>
+
+<span>Приоритет</span>
+
+</div>
+
+<div class="resident-stat">
+
+<strong>25 июня</strong>
+
+<span>Срок</span>
+
+</div>
+
+</div>
+
+</section>
+
 <section class="issue-photo">
 
-<div class="photo-placeholder">
+<div class="photos-grid">
 
-<i data-lucide="image"></i>
+<div class="photo-item">
+<i data-lucide="file-image"></i>
+</div>
 
-<span>Фотография обращения</span>
+<div class="photo-item">
+<i data-lucide="file-image"></i>
+</div>
+
+<div class="photo-item">
+<i data-lucide="file-image"></i>
+</div>
 
 </div>
 
@@ -93,7 +118,7 @@
 <p>
 
 Фонарь возле второго подъезда не работает уже несколько дней.
-В вечернее время территория практически не освещается.
+В вечернее время территория практически полностью не освещается.
 
 </p>
 
@@ -153,7 +178,7 @@
 
 <strong>15</strong>
 
-<span>Подтверждено</span>
+<span>Решено</span>
 
 </div>
 
@@ -177,13 +202,13 @@
 
 <option>Не назначен</option>
 
-<option>Электрик</option>
+<option selected>Электрик</option>
 
 <option>Сантехник</option>
 
 <option>Дворник</option>
 
-<option>Управляющая компания</option>
+<option>УК</option>
 
 </select>
 
@@ -193,7 +218,7 @@
 
 <h3>Комментарий председателя</h3>
 
-<textarea placeholder="Добавьте комментарий..."></textarea>
+<textarea placeholder="Добавьте комментарий...">Электрик уже уведомлён. Планируем устранить неисправность завтра утром.</textarea>
 
 </section>
 
@@ -206,6 +231,12 @@
 <button class="action-btn primary">
 
 Передать подрядчику
+
+</button>
+
+<button class="action-btn primary">
+
+Запросить дополнительную информацию
 
 </button>
 
@@ -227,7 +258,7 @@
 
 <section class="issue-block">
 
-<h3>История</h3>
+<h3>История обращения</h3>
 
 <div class="timeline">
 
@@ -239,7 +270,7 @@
 
 <strong>Создано обращение</strong>
 
-<p>Сегодня · 18:34</p>
+<p>20 июня · 18:34</p>
 
 </div>
 
@@ -247,13 +278,27 @@
 
 <div class="timeline-item">
 
-<div class="timeline-dot"></div>
+<div class="timeline-dot active"></div>
 
 <div>
 
 <strong>18 жителей подтвердили проблему</strong>
 
-<p>Сегодня · 19:05</p>
+<p>20 июня · 19:05</p>
+
+</div>
+
+</div>
+
+<div class="timeline-item">
+
+<div class="timeline-dot active"></div>
+
+<div>
+
+<strong>Назначен исполнитель — Электрик</strong>
+
+<p>20 июня · 19:30</p>
 
 </div>
 
@@ -265,9 +310,9 @@
 
 <div>
 
-<strong>Передано председателю</strong>
+<strong>Ожидается устранение</strong>
 
-<p>Ожидает решения</p>
+<p>Плановая дата — 25 июня</p>
 
 </div>
 
@@ -279,8 +324,16 @@
 
 </main>
 
+<nav>
+<a href="index.html"><i data-lucide="layout-dashboard"></i><span>Главная</span></a>
+<a href="residents.html"><i data-lucide="users"></i><span>Жители</span></a>
+<a href="logs.html"><i data-lucide="clipboard-list"></i><span>Журнал</span></a>
+<a href="settings.html"><i data-lucide="settings"></i><span>Настройки</span></a>
+</nav>
+
 </div>
 
+<script src="../../assets/js/app.js"></script>
 <script src="https://unpkg.com/lucide@latest"></script>
 
 <script>

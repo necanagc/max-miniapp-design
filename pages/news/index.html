@@ -3,18 +3,18 @@
 
 <head>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Новости</title>
+<title>Новости</title>
 
-    <link rel="stylesheet" href="../../assets/css/style.css">
+<link rel="stylesheet" href="../../assets/css/style.css">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+rel="stylesheet">
 
 </head>
 
@@ -26,17 +26,8 @@
 
 <div>
 
-<span class="caption">
-
-Раздел
-
-</span>
-
-<h1>
-
-Новости
-
-</h1>
+<span class="caption">Раздел</span>
+<h1>Новости</h1>
 
 </div>
 
@@ -50,20 +41,40 @@
 
 <main>
 
+<section class="filters">
+
+<button class="chip active">
+Все
+</button>
+
+<button class="chip">
+Важные
+</button>
+
+<button class="chip">
+Информация
+</button>
+
+</section>
+
 <section class="news-list">
 
 <article class="news-card">
 
-<div class="news-date">
+<div class="news-top">
 
+<div class="news-badge important">
+Важно
+</div>
+
+<div class="news-date">
 Сегодня · 09:30
+</div>
 
 </div>
 
 <h3>
-
 Плановое отключение горячей воды
-
 </h3>
 
 <p>
@@ -71,6 +82,10 @@
 12 июня с 09:00 до 18:00 будут проводиться работы на магистральном трубопроводе.
 
 </p>
+
+<div class="news-footer">
+
+<span>Председатель дома</span>
 
 <div class="attachment">
 
@@ -80,13 +95,23 @@
 
 </div>
 
+</div>
+
 </article>
+
+
 
 <article class="news-card">
 
-<div class="news-date">
+<div class="news-top">
 
+<div class="news-badge">
+Информация
+</div>
+
+<div class="news-date">
 Вчера
+</div>
 
 </div>
 
@@ -98,17 +123,32 @@
 
 <p>
 
-Приглашаем жителей принять участие в благоустройстве территории в эту субботу. Инвентарь выдаётся на месте.
+Приглашаем жителей принять участие в благоустройстве территории в эту субботу.
+Инвентарь выдаётся на месте.
 
 </p>
 
+<div class="news-footer">
+
+<span>Председатель дома</span>
+
+</div>
+
 </article>
+
+
 
 <article class="news-card">
 
-<div class="news-date">
+<div class="news-top">
 
+<div class="news-badge">
+Информация
+</div>
+
+<div class="news-date">
 3 дня назад
+</div>
 
 </div>
 
@@ -120,15 +160,21 @@
 
 <p>
 
-Завершён монтаж камер на детской площадке и возле парковки.
+Завершён монтаж камер возле парковки и детской площадки.
 
 </p>
+
+<div class="news-footer">
+
+<span>Председатель дома</span>
 
 <div class="attachment">
 
 <i data-lucide="paperclip"></i>
 
-<span>2 вложения</span>
+<span>2 фото</span>
+
+</div>
 
 </div>
 
@@ -140,42 +186,51 @@
 
 <nav>
 
-    <a href="../../index.html">
+<a href="../../index.html">
 
-        <i data-lucide="house"></i>
+<i data-lucide="house"></i>
 
-        <span>Главная</span>
+<span>Главная</span>
 
-    </a>
+</a>
 
-    <a href="../problems/index.html">
+<a href="../problems/index.html">
 
-        <i data-lucide="triangle-alert"></i>
+<i data-lucide="triangle-alert"></i>
 
-        <span>Проблемы</span>
+<span>Проблемы</span>
 
-    </a>
+</a>
 
-    <a class="active" href="../news/index.html">
+<a class="active" href="index.html">
 
-        <i data-lucide="bell"></i>
+<i data-lucide="bell"></i>
 
-        <span>Новости</span>
+<span>Новости</span>
 
-    </a>
+</a>
 
-    <a href="../profile/index.html">
+<a href="../community/index.html">
 
-        <i data-lucide="user"></i>
+<i data-lucide="users-round"></i>
 
-        <span>Профиль</span>
+<span>Сообщество</span>
 
-    </a>
+</a>
+
+<a href="../profile/index.html">
+
+<i data-lucide="user"></i>
+
+<span>Профиль</span>
+
+</a>
 
 </nav>
 
 </div>
 
+<script src="../../assets/js/app.js"></script>
 <script src="https://unpkg.com/lucide@latest"></script>
 
 <script>

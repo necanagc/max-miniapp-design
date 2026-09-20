@@ -3,18 +3,17 @@
 
 <head>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Новое обращение</title>
+<title>Новое обращение</title>
 
-    <link rel="stylesheet" href="../../assets/css/style.css">
+<link rel="stylesheet" href="../../assets/css/style.css">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 </head>
 
@@ -26,17 +25,9 @@
 
 <div>
 
-<span class="caption">
+<span class="caption">Новое обращение</span>
 
-Новое обращение
-
-</span>
-
-<h1>
-
-Сообщить о проблеме
-
-</h1>
+<h1>Сообщить о проблеме</h1>
 
 </div>
 
@@ -54,26 +45,30 @@
 
 <section class="form-block">
 
-    <h2>Фотографии</h2>
+<h2>Фотографии</h2>
 
-    <div class="photos-grid" id="photosGrid">
+<div class="photos-grid" id="photosGrid">
 
-        <label class="photo-add">
+<label class="photo-add">
 
-            <input
-                id="photoInput"
-                type="file"
-                accept="image/*"
-                multiple
-                hidden>
+<input
+id="photoInput"
+type="file"
+accept="image/*"
+multiple
+hidden>
 
-            <i data-lucide="plus"></i>
+<i data-lucide="plus"></i>
 
-            <span>Добавить</span>
+<span>Добавить</span>
 
-        </label>
+</label>
 
-    </div>
+</div>
+
+<p class="hint">
+Можно прикрепить до 10 фотографий.
+</p>
 
 </section>
 
@@ -84,17 +79,11 @@
 <select>
 
 <option>Освещение</option>
-
-<option>Дороги</option>
-
 <option>Мусор</option>
-
-<option>Благоустройство</option>
-
-<option>Парковка</option>
-
+<option>Дороги</option>
 <option>Подъезд</option>
-
+<option>Парковка</option>
+<option>Благоустройство</option>
 <option>Другое</option>
 
 </select>
@@ -103,14 +92,42 @@
 
 <section class="form-block">
 
-<h2>Описание</h2>
+<h2>Адрес</h2>
 
-<textarea
-placeholder="Кратко опишите проблему..."></textarea>
+<input
+class="text-input"
+type="text"
+value="ул. Ленина, 25"
+readonly>
 
 </section>
 
-<a class="submit-btn" href="../issue/index.html">
+<section class="form-block">
+
+<h2>Описание</h2>
+
+<textarea
+placeholder="Опишите проблему подробнее..."></textarea>
+
+</section>
+
+<section class="form-block">
+
+<label class="checkbox-row">
+
+<input type="checkbox">
+
+<span>
+
+Я подтверждаю, что информация достоверна.
+
+</span>
+
+</label>
+
+</section>
+
+<a href="../issue/index.html" class="submit-btn">
 
 Опубликовать обращение
 
@@ -158,65 +175,62 @@ placeholder="Кратко опишите проблему..."></textarea>
 
 </div>
 
+<script src="../../assets/js/app.js"></script>
 <script src="https://unpkg.com/lucide@latest"></script>
 
 <script>
 
 lucide.createIcons();
 
-</script>
-
-<script>
-
 const input = document.getElementById("photoInput");
 const grid = document.getElementById("photosGrid");
 
 let photos = [];
 
-input.addEventListener("change", function () {
+input.addEventListener("change", function(){
 
-    photos = [...photos, ...Array.from(this.files)];
+photos=[...photos,...Array.from(this.files)];
 
-    renderPhotos();
+renderPhotos();
 
-    input.value = "";
+input.value="";
 
 });
 
-function renderPhotos() {
+function renderPhotos(){
 
-    grid.querySelectorAll(".photo-item").forEach(e => e.remove());
+grid.querySelectorAll(".photo-item").forEach(e=>e.remove());
 
-    photos.forEach((file, index) => {
+photos.forEach((file,index)=>{
 
-        const reader = new FileReader();
+const reader=new FileReader();
 
-        reader.onload = function (e) {
+reader.onload=function(e){
 
-            const item = document.createElement("div");
+const item=document.createElement("div");
 
-            item.className = "photo-item";
+item.className="photo-item";
 
-            item.innerHTML = `
-                <img src="${e.target.result}">
-                <button class="photo-remove">&times;</button>
-            `;
+item.innerHTML=`
+<img src="${e.target.result}">
+<button class="photo-remove">&times;</button>
+`;
 
-            item.querySelector("button").onclick = () => {
+item.querySelector("button").onclick=()=>{
 
-                photos.splice(index,1);
+photos.splice(index,1);
 
-                renderPhotos();
+renderPhotos();
 
-            };
+};
 
-            grid.insertBefore(item, grid.firstElementChild);
+grid.insertBefore(item,grid.firstElementChild);
 
-        };
+};
 
-        reader.readAsDataURL(file);
+reader.readAsDataURL(file);
 
-    });
+});
 
 }
 
