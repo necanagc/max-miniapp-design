@@ -3,157 +3,215 @@
 
 <head>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Умный квартал</title>
+<title>Умный квартал</title>
 
-    <link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/style.css">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet">
-
-    <script src="assets/js/app.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
 
-    <div class="app">
+<div class="app">
 
-        <header>
+<header>
 
-            <div>
+<div>
+<span class="caption">Дом</span>
+<h1>ул. Ленина, 25</h1>
+</div>
 
-                <span class="caption">Дом</span>
+<a class="avatar" href="pages/profile/index.html">
+<i data-lucide="user"></i>
+</a>
 
-                <h1>ул. Ленина, 25</h1>
+</header>
 
-            </div>
+<main>
 
-            <button class="avatar">
+<section class="house-card">
 
-                <i data-lucide="user"></i>
+<div>
 
-            </button>
+<h2>ЖК «Ленина, 25»</h2>
 
-        </header>
+<p>Подтверждённый житель</p>
 
-        <main>
+</div>
 
-            <a class="create" href="pages/create/index.html">
+<div class="house-meta">
 
-                <div>
+<span>2 подъезд</span>
 
-                    <span>Сообщить о проблеме</span>
+<span>кв. 42</span>
 
-                    <small>Сделать фото и описать ситуацию</small>
-
-                </div>
-
-                <i data-lucide="arrow-right"></i>
-
-            </a>
-
-            <section class="updates">
-
-
-                <h2>Сегодня</h2>
-
-                <div class="update">
-
-                    <i data-lucide="bell"></i>
-
-                    <span>Новое объявление от председателя</span>
-
-                </div>
-
-                <div class="update">
-
-                    <i data-lucide="triangle-alert"></i>
-
-                    <span>5 обращений ожидают подтверждения</span>
-
-                </div>
-
-            </section>
-
-            <section class="issues">
-
-    <div class="section-title">
-
-        <h2>Последние обращения</h2>
-
-        <a href="#">Все</a>
-
-    </div>
-
-    <div class="empty-state">
-
-        <div class="empty-icon">
-
-            <i data-lucide="camera"></i>
-
-        </div>
-
-        <h3>Пока нет обращений</h3>
-
-        <p>
-            Создайте первое обращение или дождитесь появления новых.
-        </p>
-
-    </div>
+</div>
 
 </section>
 
-        </main>
+<a class="create" href="pages/create/index.html">
 
-        <nav>
+<div>
 
-            <a class="active" href="index.html">
+<span>Сообщить о проблеме</span>
 
-                <i data-lucide="house"></i>
+<small>Сделать фото и описать ситуацию</small>
 
-                <span>Главная</span>
+</div>
 
-            </a>
+<i data-lucide="arrow-right"></i>
 
-            <a href="pages/problems/index.html">
+</a>
 
-                <i data-lucide="triangle-alert"></i>
+<section class="updates">
 
-                <span>Проблемы</span>
+<div class="section-title">
 
-            </a>
+<h2>Объявления</h2>
 
-            <a href="pages/news/index.html">
+<a href="pages/news/index.html">Все</a>
 
-                <i data-lucide="bell"></i>
+</div>
 
-                <span>Новости</span>
+<a class="update" href="pages/news/index.html">
 
-            </a>
+<i data-lucide="megaphone"></i>
 
-            <a href="pages/profile/index.html">
+<div>
 
-                <i data-lucide="user"></i>
+<strong>Плановое отключение воды</strong>
 
-                <span>Профиль</span>
+<p>Сегодня</p>
 
-            </a>
+</div>
 
-        </nav>
+</a>
 
-    </div>
+<a class="update" href="pages/news/index.html">
 
-    <script src="https://unpkg.com/lucide@latest"></script>
+<i data-lucide="calendar"></i>
 
-    <script>
-        lucide.createIcons();
-    </script>
+<div>
+
+<strong>Субботник во дворе</strong>
+
+<p>Вчера</p>
+
+</div>
+
+</a>
+
+</section>
+
+<section class="issues">
+
+<div class="section-title">
+
+<h2>Последние обращения</h2>
+
+<a href="pages/problems/index.html">Все</a>
+
+</div>
+
+<div class="issues-list">
+
+<a class="issue-card" href="pages/issue/index.html">
+
+<div class="status status-progress"></div>
+
+<div class="issue-content">
+
+<h3>Не работает освещение возле второго подъезда</h3>
+
+<p>В работе · 18 подтверждений</p>
+
+</div>
+
+<i data-lucide="chevron-right"></i>
+
+</a>
+
+<a class="issue-card" href="pages/issue/index.html">
+
+<div class="status status-open"></div>
+
+<div class="issue-content">
+
+<h3>Переполнены мусорные контейнеры</h3>
+
+<p>Новая проблема</p>
+
+</div>
+
+<i data-lucide="chevron-right"></i>
+
+</a>
+
+</div>
+
+</section>
+
+</main>
+
+<nav>
+
+<a class="active" href="index.html">
+
+<i data-lucide="house"></i>
+
+<span>Главная</span>
+
+</a>
+
+<a href="pages/problems/index.html">
+
+<i data-lucide="triangle-alert"></i>
+
+<span>Проблемы</span>
+
+</a>
+
+<a href="pages/news/index.html">
+
+<i data-lucide="bell"></i>
+
+<span>Новости</span>
+
+</a>
+
+<a href="pages/community/index.html">
+
+<i data-lucide="users-round"></i>
+
+<span>Сообщество</span>
+
+</a>
+
+<a href="pages/profile/index.html">
+
+<i data-lucide="user"></i>
+
+<span>Профиль</span>
+
+</a>
+
+</nav>
+
+</div>
+
+<script src="assets/js/app.js"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+
+<script>
+lucide.createIcons();
+</script>
 
 </body>
 
