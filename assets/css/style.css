@@ -206,6 +206,10 @@ nav {
 
 nav a {
 
+    flex: 1 1 0;
+
+    min-width: 0;
+
     display: flex;
 
     flex-direction: column;
@@ -221,6 +225,8 @@ nav a {
     font-size: 11px;
 
     cursor: pointer;
+
+    white-space: nowrap;
 
 }
 
@@ -1665,6 +1671,16 @@ gap:14px;
 }
 
 .secondary-btn{
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+text-decoration:none;
+
+color:var(--text);
 
 height:56px;
 
