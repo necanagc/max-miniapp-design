@@ -118,6 +118,13 @@ const categoryLabels = { INFRASTRUCTURE: "Инфраструктура", CLEANLI
 const statusLabels = { DETECTED: "Новая", CONFIRMING: "На проверке", READY_FOR_APPEAL: "Готово к обращению", HANDED_TO_CHAIRMAN: "У председателя", MARKED_SENT: "Передано", WAITING_RESULT: "Ожидает решения", RESOLVED: "Решено" };
 const membershipStatusLabels = { ACTIVE: "Активный", INACTIVE: "Неактивный" };
 const roleLabels = { RESIDENT: "Житель", CHAIRMAN: "Председатель", ADMIN: "Администратор" };
+const communityTypeLabels = { poll: "Опрос", calendarEvent: "Событие календаря", initiative: "Инициатива" };
+const communityStatusLabels = {
+	poll: { OPEN: "Открыт", CLOSED: "Закрыт", DRAFT: "Черновик" },
+	initiative: { OPEN: "Открыта", CLOSED: "Закрыта", DRAFT: "Черновик" }
+};
+
+const translateCommunityStatus = (type, status) => communityStatusLabels[type]?.[status] || status || "";
 
 const formatDate = (value) => new Intl.DateTimeFormat("ru-RU", { day: "numeric", month: "long" }).format(new Date(value));
 const issueTitle = (issue) => issue.category === "CLEANLINESS" ? "Переполнены мусорные контейнеры" : issue.status === "RESOLVED" ? "Отремонтирована детская площадка" : "Не работает освещение возле второго подъезда";
@@ -220,13 +227,27 @@ function renderSettings() {
 function renderLogs() {
 	const main = document.querySelector("main");
 	if (!main) return;
+	const eventLabels = {
+		"issue.created": "Создано новое обращение",
+		"issue.confirmed": "Обращение подтверждено",
+		"issue.status_changed": "Статус обращения обновлён",
+		"announcement.created": "Опубликовано объявление"
+	};
 	const events = [
-		...mockData.issues[0].timeline.map((event) => ({ title: event.type, detail: `${issueTitle(mockData.issues[0])} · ${formatDate(event.created_at)}`, icon: "triangle-alert" })),
-		...mockData.announcements.map((announcement) => ({ title: "announcement.created", detail: announcement.title, icon: "megaphone" }))
+		...mockData.issues[0].timeline.map((event) => ({
+			title: eventLabels[event.type] || event.type,
+			detail: `${issueTitle(mockData.issues[0])} · ${formatDate(event.created_at)}`,
+			icon: "triangle-alert"
+		})),
+		...mockData.announcements.map((announcement) => ({
+			title: "Опубликовано объявление",
+			detail: announcement.title,
+			icon: "megaphone"
+		}))
 	];
 	const section = document.createElement("section");
 	section.className = "logs-day";
-	section.innerHTML = `<h2>Contract events</h2>${events.map((event) => `<div class="log-card"><div class="log-icon"><i data-lucide="${event.icon}"></i></div><div class="log-content"><h3>${event.title}</h3><p>${event.detail}</p></div></div>`).join("")}`;
+	section.innerHTML = `<h2>Сегодня</h2>${events.map((event) => `<div class="log-card"><div class="log-icon"><i data-lucide="${event.icon}"></i></div><div class="log-content"><h3>${event.title}</h3><p>${event.detail}</p></div></div>`).join("")}`;
 	main.querySelectorAll(".logs-day").forEach((element) => element.remove());
 	main.appendChild(section);
 }
@@ -252,7 +273,7 @@ function renderCommunity() {
 	const poll = mockData.polls[0];
 	const event = mockData.calendar_events[0];
 	const initiative = mockData.initiatives[0];
-	root.innerHTML = `<section class="community-section"><div class="community-kicker">Poll · ${poll.status}</div><h2>${poll.question}</h2><div class="poll-options">${poll.options.map((option) => `<button class="poll-option ${poll.my_option_id === option.id ? "selected" : ""}" data-option-id="${option.id}"><span>${option.text}</span><strong>${poll.results.find((result) => result.option_id === option.id)?.votes_count || 0}</strong></button>`).join("")}</div><p class="community-meta">${poll.total_votes} голосов · до ${formatDate(poll.ends_at)} · ${poll.my_option_id ? "Ваш голос учтён" : "Выберите вариант"}</p></section><section class="community-section"><div class="community-kicker">Calendar event</div><h2>${event.title}</h2><p>${event.description}</p><p class="community-meta">${formatDate(event.starts_at)} · ${event.starts_at.slice(11, 16)}–${event.ends_at.slice(11, 16)}</p></section><section class="community-section"><div class="community-kicker">Initiative · ${initiative.status}</div><h2>${initiative.title}</h2><p>${initiative.description}</p><p class="community-meta">${initiative.supports_count} поддержек · ${initiative.supported_by_me ? "поддержано вами" : "ещё не поддержано"}</p><button class="secondary-btn initiative-support" ${initiative.supported_by_me ? "disabled" : ""}>${initiative.supported_by_me ? "Поддержано" : "Поддержать инициативу"}</button></section>`;
+	root.innerHTML = `<section class="community-section"><div class="community-kicker">${communityTypeLabels.poll} · ${translateCommunityStatus("poll", poll.status)}</div><h2>${poll.question}</h2><div class="poll-options">${poll.options.map((option) => `<button class="poll-option ${poll.my_option_id === option.id ? "selected" : ""}" data-option-id="${option.id}"><span>${option.text}</span><strong>${poll.results.find((result) => result.option_id === option.id)?.votes_count || 0}</strong></button>`).join("")}</div><p class="community-meta">${poll.total_votes} голосов · до ${formatDate(poll.ends_at)} · ${poll.my_option_id ? "Ваш голос учтён" : "Выберите вариант"}</p></section><section class="community-section"><div class="community-kicker">${communityTypeLabels.calendarEvent}</div><h2>${event.title}</h2><p>${event.description}</p><p class="community-meta">${formatDate(event.starts_at)} · ${event.starts_at.slice(11, 16)}–${event.ends_at.slice(11, 16)}</p></section><section class="community-section"><div class="community-kicker">${communityTypeLabels.initiative} · ${translateCommunityStatus("initiative", initiative.status)}</div><h2>${initiative.title}</h2><p>${initiative.description}</p><p class="community-meta">${initiative.supports_count} поддержек · ${initiative.supported_by_me ? "поддержано вами" : "ещё не поддержано"}</p><button class="secondary-btn initiative-support" ${initiative.supported_by_me ? "disabled" : ""}>${initiative.supported_by_me ? "Поддержано" : "Поддержать инициативу"}</button></section>`;
 	root.querySelectorAll("[data-option-id]").forEach((button) => button.addEventListener("click", () => {
 		if (poll.my_option_id) return;
 		poll.my_option_id = button.dataset.optionId;
